@@ -32,7 +32,8 @@
 }
 
 .content-card {
-  min-width: fit-content;
+ /* min-width: fit-content;*/
+  width: 100%;
   background-color: var(--background-color);
   border: 2px solid var(--main-color);
 }
@@ -44,10 +45,10 @@
 }
 
 .header {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), 'fantasy', sans-serif;
   text-transform: uppercase;
   display: grid;
-  grid-template-rows: 1.4fr 1fr;
+  grid-template-rows: var(--header-grid-template);
   justify-content: center;
   min-height: 323px;
   margin-top: 102px;
@@ -67,7 +68,7 @@
 }
 
 .header__logo-title {
-  font-size: clamp(49px, 30px + 1vw, 65px);
+  font-size: clamp(49px, 30px + 2.5vw, 65px);
   font-weight: var(--main-font-text-weight);
 }
 
@@ -77,10 +78,12 @@
 }
 
 .header__theme-menu {
+  position: relative;
   display: flex;
   justify-content: center;
   padding-top: 25px;
   padding-bottom: 25px;
+  left: 9px;
 }
 
 .theme-menu__list {
@@ -100,6 +103,7 @@
   position: relative;
   opacity: 1;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .theme-menu__button:disabled {
@@ -117,16 +121,6 @@
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-direction: alternate-reverse;
-}
-
-@keyframes arrow {
-  from {
-    left: -24px;
-  }
-
-  to {
-    left: -20px;
-  }
 }
 
 .theme-menu__button:hover {
@@ -177,13 +171,14 @@
 .main__article-wrapper {
   position: relative;
   overflow: hidden;
-  border-top: 2px solid var(--main-color);
-  border-bottom: 2px solid var(--main-color);
   max-height: fit-content;
+  box-sizing: content-box;
 }
 
 .main__article-image {
   width: 100%;
+  border-top: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);  
 }
 
 .main__article-label {
@@ -191,49 +186,76 @@
   top: 25px;
   right: var(--main-article-label-padding);
   font-size: 14px;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), 'fantasy', sans-serif;
   opacity: 0.5;
   mix-blend-mode: hard-light;
 }
 
+
 @supports (
-  (text-shadow: 1px var(--background-color)) or
     (-webkit-text-stroke: 1px var(--background-color))
 ) {
   .main__article-label {
-    -webkit-text-stroke: 1px var(--background-color);
-    text-shadow: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
+    text-shadow: 0 0;
   }
 }
 
+.main__article-label {
+  text-shadow: 1px 1px 0 var(--background-color);
+}
+
 .main__article-text {
-  padding: 25px;
+  padding: 23px 25px 25px;
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 25px;
   line-height: 21px;
 }
 
+.main__article-memories {
+  margin-top: 2px;
+}
+
 .main__article-footer {
+  margin-top: -4px;
   display: flex;
   justify-content: end;
   align-items: end;
   gap: 7px;
 }
 
+.card__icon-button {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  border: 2px solid transparent;
+  width: 45px;
+  height: 100%;
+  padding: 0;
+  transition: border 0.3s ease;
+  cursor: pointer;
+}
+
 .card__like-button {
   background-color: transparent;
   padding: 12.5px 37px;
   border: 2px solid var(--main-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), 'fantasy', sans-serif;
   font-size: 14px;
   line-height: 90%;
+  width: 130px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {
   position: relative;
   box-shadow: 0px 0px var(--main-color);
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .button:focus {
@@ -281,7 +303,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), 'fantasy', sans-serif;
   font-size: 14px;
   line-height: 90%;
   width: clamp(310px, 81.6%, 339px);
@@ -294,7 +316,7 @@
 
 .dialog[open] {
   display: grid;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), 'fantasy', sans-serif;
   color: var(--main-color);
   font-size: 14px;
   line-height: 150%;
@@ -314,7 +336,7 @@
 .dialog__button-icon {
   width: 39px;
   height: 39px;
-  justify-self: center;
+  justify-self: start;
   align-self: center;
 }
 
@@ -322,12 +344,20 @@
   text-transform: uppercase;
 }
 
-.dialog__button {
+.dialog__form {
+  height: 100%;
+  width: 100%;
+  display: grid;
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 3;
   align-self: center;
   justify-self: center;
-  width: clamp(257px, 81.6%, 293px);
+}
+
+.dialog__button {
+  align-self: center;
+  justify-self: center;
+  width: clamp(257px, 100%, 293px);
   text-transform: uppercase;
   height: 38px;
   padding: 9px 17px;

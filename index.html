@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="light dark" />
     <title>Закрывающий тег</title>
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
@@ -20,8 +20,8 @@
   <body class="page">
     <header class="header content-card">
       <section class="header__logo">
-        <h1 class="header__logo-title">&lt;/html&gt;</h1>
-        <h2 class="header__logo-subtitle">Закрывающий тег</h2>
+        <a class="header__logo-title">&lt;/html&gt;</a>
+        <h1 class="header__logo-subtitle">Закрывающий тег</h1>
       </section>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
@@ -52,9 +52,9 @@
     <main class="main">
       <!-- КАРТОЧКА 1 -->
       <article class="main__article content-card">
-        <h3 class="main__article-header">
+        <h2 class="main__article-header">
           Фритрек и нулевой спринт: Подготовка к работе
-        </h3>
+        </h2>
         <div class="main__article-wrapper">
           <img
             src="svg/image1.svg"
@@ -68,7 +68,7 @@
             основами и настроиться на учёбу. И, возможно, подумать, как новые
             знания могут повлиять на ваше будущее.
           </p>
-          <p>Место для ваших воспоминаний о начале обучения.</p>
+          <p class="main__article-memories">Место для ваших воспоминаний о начале обучения.</p>
           <p class="main__article-footer">
             <button class="card__icon-button">
               <svg
@@ -108,7 +108,7 @@
       </article>
       <!-- КАРТОЧКА 2 -->
       <article class="main__article content-card">
-        <h3 class="main__article-header">1 спринт: Я — чистый лист</h3>
+        <h2 class="main__article-header">1 спринт: Я — чистый лист</h2>
         <div class="main__article-wrapper">
           <img
             src="svg/image1.svg"
@@ -164,7 +164,7 @@
       </article>
       <!-- КАРТОЧКА 3 -->
       <article class="main__article content-card">
-        <h3 class="main__article-header">1 спринт: А если не получится?</h3>
+        <h2 class="main__article-header">1 спринт: А если не получится?</h2>
         <div class="main__article-wrapper">
           <img
             src="svg/image1.svg"
@@ -218,7 +218,7 @@
       </article>
       <!-- КАРТОЧКА 4 -->
       <article class="main__article content-card">
-        <h3 class="main__article-header">2 спринт: Погоня за идеалом</h3>
+        <h2 class="main__article-header">2 спринт: Погоня за идеалом</h2>
         <div class="main__article-wrapper">
           <img
             src="svg/image1.svg"
@@ -274,7 +274,7 @@
       </article>
       <!-- КАРТОЧКА 5 -->
       <article class="main__article content-card">
-        <h3 class="main__article-header">2 спринт: О тех, кто рядом</h3>
+        <h2 class="main__article-header">2 спринт: О тех, кто рядом</h2>
         <div class="main__article-wrapper">
           <img
             src="svg/image1.svg"
@@ -331,7 +331,7 @@
       </article>
       <!-- КАРТОЧКА 6 -->
       <article class="main__article content-card">
-        <h3 class="main__article-header">3 спринт: Обходные стратегии</h3>
+        <h2 class="main__article-header">3 спринт: Обходные стратегии</h2>
         <div class="main__article-wrapper">
           <img
             src="svg/image1.svg"
@@ -385,7 +385,7 @@
       </article>
       <!-- КАРТОЧКА 7 -->
       <article class="main__article content-card">
-        <h3 class="main__article-header">3 спринт: Когда опускаются руки</h3>
+        <h2 class="main__article-header">3 спринт: Когда опускаются руки</h2>
         <div class="main__article-wrapper">
           <img
             src="svg/image1.svg"
@@ -441,7 +441,7 @@
       </article>
       <!-- КАРТОЧКА 8 -->
       <article class="main__article content-card">
-        <h3 class="main__article-header">«Сейчас я здесь»</h3>
+        <h2 class="main__article-header">«Сейчас я здесь»</h2>
         <div class="main__article-wrapper">
           <img
             src="svg/image1.svg"
@@ -513,19 +513,17 @@
         ><span class="button__text">Сохранить на память</span>
       </button>
     </footer>
-    <script src="./scripts/like.js"></script>
     <dialog id="pop-up" class="dialog">
       <svg class="dialog__button-icon" viewBox="0 0 39 39">
         <use href="svg/floppy.svg#floppy-1"></use>
       </svg>
       <p class="dialog__message">Вставьте дискету, чтобы продолжить</p>
-      <button
-        class="footer__button button dialog__button"
-        type="button"
-        onclick="window['pop-up'].close()"
-      >
-        <span class="button__text">Ок</span>
-      </button>
+      <form class="dialog__form" method="dialog">
+        <button class="footer__button button dialog__button" type="submit">
+          <span class="button__text">Ок</span>
+        </button>
+      </form>
     </dialog>
+    <script src="./scripts/like.js"></script>
   </body>
 </html>

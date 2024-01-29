@@ -15,7 +15,7 @@
     --background-image: repeating-linear-gradient(90deg, var(--grid-gradient-color) 0px 2px, transparent 2px 4px), 
                         repeating-linear-gradient(var(--grid-gradient-color) 0px 2px, transparent 2px 4px),
                         linear-gradient(var(--gradient-color-a) var(--gradient-start-a), var(--gradient-color-b));
-    --content-width: clamp(375px, 48%, 696px);
+    --content-width: clamp(375px, 49%, 700px);
     --headings-top-margin: 3px;
     --headings-bottom-margin: 3px;
     --footer-bottom-padding: 105px;
@@ -27,7 +27,8 @@
     --heart-core-color: var(--heart-color);
     --dialog-width: clamp(357px, 24%, 341px);
     --dialog-padding: 32px 32.5px 30.5px;
-    --main-cards-gap: 57px;
+    --main-cards-gap: 54px;
+    --header-grid-template: 2fr 1fr;
 }
 
 @media (width <= 375px) {
@@ -38,6 +39,6 @@
         --footer-bottom-padding: 102px;
         --main-article-label-padding: 11px;
         --dialog-padding: 32px 42px;
-        --main-cards-gap: 54px;
+        --header-grid-template: 1.5fr 0.75fr;
     }
 }

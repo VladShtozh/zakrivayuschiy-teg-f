@@ -221,10 +221,6 @@
   gap: 7px;
 }
 
-.button__text {
-  white-space: nowrap;
-}
-
 .card__like-button {
   background-color: transparent;
   padding: 12.5px 37px;
@@ -266,6 +262,7 @@
   position: relative;
   color: var(--button-text-color);
   mix-blend-mode: difference;
+  white-space: nowrap;
 }
 
 .footer {

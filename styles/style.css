@@ -189,9 +189,6 @@
   font-family: var(--accent-font-family), "fantasy", sans-serif;
   opacity: 0.5;
   mix-blend-mode: hard-light;
-}
-
-.main__article-label {
   text-shadow: 1px 1px 0 var(--background-color);
 }
 

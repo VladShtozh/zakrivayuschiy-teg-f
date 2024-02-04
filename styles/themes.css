@@ -14,7 +14,7 @@
     --gradient-color-a: #007f0c;
     --gradient-color-b: #004306;
     --gradient-start-a: 0;
-    --button-text-color: color: var(--main-color);
+    --button-text-color: var(--main-color);
 }
 
 :root.theme-light {

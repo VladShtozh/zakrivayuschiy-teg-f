@@ -1,44 +1,56 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-    --main-color: #000000;
-    --main-font-family: "Inter";
-    --accent-font-family: "Press Start 2P";
-    --main-font-headers-weight: 700;
-    --main-font-text-weight: 400;
-    --background-color: #FFFFFF;
-    --main-color: #000000;
-    --grid-gradient-color: #d3d3d3;
-    --gradient-color-a: #e7e7e7;
-    --gradient-color-b: #1a1a1a;
-    --gradient-start-a: 0.01%;
-    --background-image: repeating-linear-gradient(90deg, var(--grid-gradient-color) 0px 2px, transparent 2px 4px), 
-                        repeating-linear-gradient(var(--grid-gradient-color) 0px 2px, transparent 2px 4px),
-                        linear-gradient(var(--gradient-color-a) var(--gradient-start-a), var(--gradient-color-b));
-    --content-width: clamp(375px, 49%, 700px);
-    --headings-top-margin: 3px;
-    --headings-bottom-margin: 3px;
-    --footer-bottom-padding: 105px;
-    --main-article-label-padding: 25px;
-    --button-text-color: var(--background-color);
-    --heart-contour-color: var(--main-color);
-    --heart-color: #FF0000;
-    --heart-main-body-color: var(--heart-color);
-    --heart-core-color: var(--heart-color);
-    --dialog-width: clamp(357px, 24%, 341px);
-    --dialog-padding: 32px 32.5px 30.5px;
-    --main-cards-gap: 54px;
-    --header-grid-template: 2fr 1fr;
+  --main-color: #000000;
+  --main-font-family: "Inter";
+  --accent-font-family: "Press Start 2P";
+  --main-font-headers-weight: 700;
+  --main-font-text-weight: 400;
+  --background-color: #ffffff;
+  --main-color: #000000;
+  --grid-gradient-color: #d3d3d3;
+  --gradient-color-a: #e7e7e7;
+  --gradient-color-b: #1a1a1a;
+  --gradient-start-a: 0.01%;
+  --background-image: repeating-linear-gradient(
+      90deg,
+      var(--grid-gradient-color) 0px 2px,
+      transparent 2px 4px
+    ),
+    repeating-linear-gradient(
+      var(--grid-gradient-color) 0px 2px,
+      transparent 2px 4px
+    ),
+    linear-gradient(
+      var(--gradient-color-a) var(--gradient-start-a),
+      var(--gradient-color-b)
+    );
+  --content-width: clamp(375px, 49%, 700px);
+  --headings-top-margin: 3px;
+  --headings-bottom-margin: 3px;
+  --footer-bottom-padding: 105px;
+  --main-article-label-padding: 25px;
+  --button-text-color: var(--background-color);
+  --heart-contour-color: var(--main-color);
+  --heart-color: #ff0000;
+  --heart-main-body-color: var(--heart-color);
+  --heart-core-color: var(--heart-color);
+  --dialog-width: clamp(341px, 24%, 357px);
+  --dialog-padding: 32px 32.5px 30.5px;
+  --main-cards-gap: 52px;
+  --header-grid-template: 2fr 1fr;
+  --footer-icon-size: 21px;
 }
 
 @media (width <= 375px) {
-    :root {
-        --content-width:100%;
-        --headings-top-margin: 4px;
-        --headings-bottom-margin: 6px;
-        --footer-bottom-padding: 102px;
-        --main-article-label-padding: 11px;
-        --dialog-padding: 32px 42px;
-        --header-grid-template: 1.5fr 0.75fr;
-    }
+  :root {
+    --content-width: 100%;
+    --headings-top-margin: 4px;
+    --headings-bottom-margin: 6px;
+    --footer-bottom-padding: 102px;
+    --main-article-label-padding: 11px;
+    --dialog-padding: 32px 40px;
+    --header-grid-template: 1.5fr 0.75fr;
+    --footer-icon-size: 28px;
+  }
 }
